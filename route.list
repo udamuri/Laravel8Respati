@@ -1,0 +1,15 @@
++--------+-----------+-----------------------+---------------+------------------------------------------------------------+------------------------------------------+
+| Domain | Method    | URI                   | Name          | Action                                                     | Middleware                               |
++--------+-----------+-----------------------+---------------+------------------------------------------------------------+------------------------------------------+
+|        | GET|HEAD  | /                     |               | Closure                                                    | web                                      |
+|        | GET|HEAD  | api/posts             | posts.index   | App\Http\Controllers\Api\V1\PostController@index           | api                                      |
+|        | POST      | api/posts             | posts.store   | App\Http\Controllers\Api\V1\PostController@store           | api                                      |
+|        | GET|HEAD  | api/posts/create      | posts.create  | App\Http\Controllers\Api\V1\PostController@create          | api                                      |
+|        | GET|HEAD  | api/posts/{post}      | posts.show    | App\Http\Controllers\Api\V1\PostController@show            | api                                      |
+|        | PUT|PATCH | api/posts/{post}      | posts.update  | App\Http\Controllers\Api\V1\PostController@update          | api                                      |
+|        | DELETE    | api/posts/{post}      | posts.destroy | App\Http\Controllers\Api\V1\PostController@destroy         | api                                      |
+|        | GET|HEAD  | api/posts/{post}/edit | posts.edit    | App\Http\Controllers\Api\V1\PostController@edit            | api                                      |
+|        | GET|HEAD  | api/user              |               | Closure                                                    | api                                      |
+|        |           |                       |               |                                                            | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | sanctum/csrf-cookie   |               | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                      |
++--------+-----------+-----------------------+---------------+------------------------------------------------------------+------------------------------------------+
