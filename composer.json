@@ -30,7 +30,10 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "app/Libraries/Api.php"
+        ]
     },
     "scripts": {
         "post-autoload-dump": [
